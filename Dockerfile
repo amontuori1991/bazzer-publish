@@ -1,9 +1,11 @@
-FROM debian:bullseye-slim
-
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 
+# Copia i file pubblicati
 COPY . .
 
-RUN chmod +x ./start.sh
+# Rende l'eseguibile avviabile
+RUN chmod +x ./LegheFC
 
-CMD ["./start.sh"]
+# Comando di avvio
+ENTRYPOINT ["./LegheFC"]
