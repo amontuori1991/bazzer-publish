@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: bazzer-fantacalcio
+    runtime: docker
+    region: frankfurt
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: false
